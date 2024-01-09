@@ -4,6 +4,7 @@ import JobFilterSideBar from "@/components/JobFilterSideBar";
 import JobResults from "@/components/JobResults";
 import H1 from "@/components/ui/h1";
 import { JobFilterValues } from "@/lib/validations";
+import { Metadata } from "next";
 
 type PageProps = {
   searchParams: {
@@ -32,7 +33,7 @@ function getTitle({ q, type, location, remote }: JobFilterValues) {
 //good for SEO
 export function generateMetadata({
   searchParams: { q, type, location, remote },
-}: PageProps) {
+}: PageProps): Metadata {
   return {
     title: `${getTitle({
       q,
